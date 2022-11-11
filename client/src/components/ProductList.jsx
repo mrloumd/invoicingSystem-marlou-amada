@@ -2,9 +2,9 @@ import React from 'react'
 
 function ProductList({ product }) {
   return (
-    <span className="card m-3">
+    <span className="card">
       <section className="card_image">
-        <img src={product.image} />
+        <img alt=".." src={product.image} />
       </section>
 
       <section className="card-body">

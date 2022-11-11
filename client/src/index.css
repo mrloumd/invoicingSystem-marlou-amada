@@ -132,11 +132,40 @@ form .form_footer {
   right: 0;
 }
 
-.product_card {
+.update-delete_btns {
+  margin: 0.5rem;
+  background-color: white;
+  border: none;
+}
+
+.invoice_card, .product_card {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 1rem;
+}
+
+.product_card .card {
+  margin: 2rem;
+}
+
+.invoice_card .card {
+  padding: 1rem;
+  margin: 2rem;
+}
+.invoice_card .card .table {
+  text-align: center;
+}
+.invoice_card .card .table th {
+  margin: 2rem;
+}
+
+.modal_form {
+  width: 100%;
+  border-radius: 0;
+  overflow: hidden;
+}
+.modal_form input {
+  width: 100%;
 }
 
 body {

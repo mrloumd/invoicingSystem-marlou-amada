@@ -6,6 +6,7 @@ import { getInvoices } from '../features/invoice/invoiceSlice'
 import { reset } from '../features/auth/authSlice'
 // import AddInvoiceModal from '../components/AddInvoiceModal'
 import Spinner from '../components/Spinner'
+import AddInvoiceModal from '../components/AddInvoiceModal'
 
 function InvoicePage() {
   const dispatch = useDispatch()
@@ -32,17 +33,26 @@ function InvoicePage() {
   }
 
   return (
-    <div>
-      {invoices.length > 0 ? (
-        <div className="invoice-card">
-          {invoices.map((invoice) => (
-            <InvoiceItem key={invoice._id} invoice={invoice} />
-          ))}
-        </div>
-      ) : (
-        <h3 className="d-flex justify-content-center mt-5">Buy product</h3>
-      )}
-    </div>
+    <>
+      <div className="invoice-container">
+        <section className=" add-invoice_btn m-auto">
+          {' '}
+          <AddInvoiceModal />
+        </section>
+
+        <section>
+          {invoices.length > 0 ? (
+            <div className="invoice_card">
+              {invoices.map((invoice) => (
+                <InvoiceItem key={invoice._id} invoice={invoice} />
+              ))}
+            </div>
+          ) : (
+            <h3 className="d-flex justify-content-center mt-5">Buy product</h3>
+          )}
+        </section>
+      </div>
+    </>
   )
 }
 

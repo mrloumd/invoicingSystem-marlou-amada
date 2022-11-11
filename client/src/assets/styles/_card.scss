@@ -1,8 +1,33 @@
 @import './variables';
 
-.product_card {
+
+%card {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 1rem;
+}
+
+.product_card {
+    @extend %card;
+
+    .card {
+        margin: 2rem
+    }
+}
+
+.invoice_card {
+    @extend %card;
+
+    .card {
+        padding: 1rem;
+        margin: 2rem;
+
+        .table {
+            text-align: center;
+
+            th {
+                margin: 2rem;
+            }
+        }
+    }
 }

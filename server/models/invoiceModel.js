@@ -22,7 +22,7 @@ const invoiceSchema = mongoose.Schema(
       required: [true, "Please add product name"],
     },
     productPrice: {
-      type: String,
+      type: Number,
       required: [true, "Please add product price"],
     },
     productQuantity: {
