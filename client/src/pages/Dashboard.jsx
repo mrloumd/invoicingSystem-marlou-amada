@@ -52,10 +52,18 @@ function Dashboard() {
 
   return (
     <>
-      <div className="product_card">
-        {products.map((product) => (
-          <ProductList key={product._id} product={product} />
-        ))}
+      <div>
+        {products.length > 0 ? (
+          <div className="product_card">
+            {products.map((product) => (
+              <ProductList key={product._id} product={product} />
+            ))}
+          </div>
+        ) : (
+          <h3 className="d-flex justify-content-center mt-5">
+            No products available
+          </h3>
+        )}
       </div>
     </>
   )
