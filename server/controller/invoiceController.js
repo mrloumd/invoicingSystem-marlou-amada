@@ -6,10 +6,11 @@ import Invoice from "../models/invoiceModel.js";
 const getInvoice = asyncHandler(async (req, res) => {
   //   get invoice of login user
   const invoices = await Invoice.find({ user: req.user.id });
+  res.status(200).json(invoices);
 
-  //get all users
-  //   const invoices = await Invoice.find();
-  //   res.status(200).json(invoices);
+  // //get all users
+  // const invoices = await Invoice.find();
+  //  res.status(200).json(invoices);
 });
 
 // @desc    Set invoice

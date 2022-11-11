@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+
 import { useSelector, useDispatch } from 'react-redux'
 import InvoiceItem from '../components/InvoiceItem'
 import { getInvoices } from '../features/invoice/invoiceSlice'
@@ -8,7 +8,6 @@ import { reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
 
 function InvoicePage() {
-  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const { user } = useSelector((state) => state.auth)
@@ -21,16 +20,12 @@ function InvoicePage() {
       console.log(message)
     }
 
-    if (!user) {
-      navigate('/login')
-    }
-
     dispatch(getInvoices())
 
     return () => {
       dispatch(reset())
     }
-  }, [user, isError, message, navigate, dispatch])
+  }, [user, isError, message, dispatch])
 
   if (isLoading) {
     return <Spinner />
