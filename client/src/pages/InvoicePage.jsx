@@ -1,7 +1,54 @@
-import React from 'react'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import InvoiceItem from '../components/InvoiceItem'
+import { getInvoices } from '../features/invoice/invoiceSlice'
+import { reset } from '../features/auth/authSlice'
+// import AddInvoiceModal from '../components/AddInvoiceModal'
+import Spinner from '../components/Spinner'
 
 function InvoicePage() {
-  return <div>InvoicePage</div>
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const { user } = useSelector((state) => state.auth)
+  const { invoices, isLoading, isError, message } = useSelector(
+    (state) => state.invoices,
+  )
+
+  useEffect(() => {
+    if (isError) {
+      console.log(message)
+    }
+
+    if (!user) {
+      navigate('/login')
+    }
+
+    dispatch(getInvoices())
+
+    return () => {
+      dispatch(reset())
+    }
+  }, [user, isError, message, navigate, dispatch])
+
+  if (isLoading) {
+    return <Spinner />
+  }
+
+  return (
+    <div>
+      {invoices.length > 0 ? (
+        <div className="invoice-card">
+          {invoices.map((invoice) => (
+            <InvoiceItem key={invoice._id} invoice={invoice} />
+          ))}
+        </div>
+      ) : (
+        <h3 className="d-flex justify-content-center mt-5">Buy product</h3>
+      )}
+    </div>
+  )
 }
 
 export default InvoicePage
