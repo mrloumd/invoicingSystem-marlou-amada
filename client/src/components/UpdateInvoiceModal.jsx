@@ -58,60 +58,59 @@ function UpdateInvoiceModa({ invoice }) {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body">
-              <form className="modal_form" onSubmit={onSubmit}>
-                <section className="form-container">
-                  {' '}
-                  <div className="form-group">
-                    <input
-                      className="w-100 p-2"
-                      placeholder={invoice.productName}
-                      type="text"
-                      name="productName"
-                      id="productName"
-                      value={productName}
-                      onChange={(e) => setproductName(e.target.value)}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      className="form-control mt-4"
-                      placeholder={invoice.productPrice}
-                      type="number"
-                      name="productPrice"
-                      id="productPrice "
-                      value={productPrice}
-                      onChange={(e) => setproductPrice(e.target.value)}
-                    ></input>
-                  </div>
-                  <div className="form-group">
-                    <input
-                      className="form-control mt-4 mb-4"
-                      placeholder={invoice.productQuantity}
-                      type="number"
-                      name="productQuantity"
-                      id="productQuantity "
-                      value={productQuantity}
-                      onChange={(e) => setproductQuantity(e.target.value)}
-                    ></input>
-                  </div>
-                </section>
 
-                <section className="button-container">
-                  <div className="modal-footer">
-                    <button
-                      className="btn btn-block text-center"
-                      type="submit"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      {' '}
-                      SUBMIT
-                    </button>
-                  </div>
-                </section>
-              </form>
-            </div>
+            <form className="modal_form" onSubmit={onSubmit}>
+              <section className="form-container">
+                {' '}
+                <div className="form-group">
+                  <input
+                    className="w-100 p-2"
+                    placeholder={invoice.productName}
+                    type="text"
+                    name="productName"
+                    id="productName"
+                    value={productName}
+                    onChange={(e) => setproductName(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control mt-4"
+                    placeholder={invoice.productPrice}
+                    type="number"
+                    name="productPrice"
+                    id="productPrice "
+                    value={productPrice}
+                    onChange={(e) => setproductPrice(e.target.value)}
+                  ></input>
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control mt-4 mb-4"
+                    placeholder={invoice.productQuantity}
+                    type="number"
+                    name="productQuantity"
+                    id="productQuantity "
+                    value={productQuantity}
+                    onChange={(e) => setproductQuantity(e.target.value)}
+                  ></input>
+                </div>
+              </section>
+
+              <section className="button-container">
+                <div className="modal-footer">
+                  <button
+                    className="btn btn-block text-center"
+                    type="submit"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    {' '}
+                    SUBMIT
+                  </button>
+                </div>
+              </section>
+            </form>
           </div>
         </div>
       </div>
