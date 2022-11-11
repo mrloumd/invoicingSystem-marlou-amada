@@ -1,0 +1,14 @@
+const products = [
+  {
+    name: "Logitech mouse",
+    price: 5000,
+    image: "/images/mouse.png",
+  },
+  {
+    name: "Razer mouse",
+    price: 4000,
+    image: "/images/mouse2.png",
+  },
+];
+
+module.exports = products;

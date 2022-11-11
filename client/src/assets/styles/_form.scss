@@ -1,0 +1,62 @@
+@import './variables';
+
+.form_page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background: #FCFFFFFF;
+    padding: 2rem;
+    border-radius: 20px;
+    color: white;
+    width: 30%;
+    box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
+
+    .form_header {
+        color: $primaryColor;
+        font-family: 'Suez One', serif;
+    }
+
+    .form_footer {
+        color: black;
+    }
+}
+
+.form_group {
+
+    .form_label {
+        color: $primaryColor;
+        font-size: 18px;
+        display: block;
+        transition: all 0.3s;
+        transform: translateY(-5rem);
+        font-weight: 600;
+    }
+
+    .form_input {
+        width: 100%;
+        color: #333;
+        border-radius: 5px;
+        background-color: rgb(255, 255, 255);
+        border: none;
+        display: block;
+        border-bottom: 0.3rem solid transparent;
+        transition: all 0.3s;
+        box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    .form_input:placeholder-shown+.form_label {
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transform: translateY(-4rem);
+        transform: translateY(-4rem);
+    }
+
+}

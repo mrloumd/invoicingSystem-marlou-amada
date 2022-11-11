@@ -1,0 +1,26 @@
+@import './variables';
+
+//Navbar
+nav {
+    box-shadow: rgba(27, 31, 35, 0.2) 0px 1px 0px;
+
+    .navbar-brand {
+        color: $primaryColor;
+        font-size: 40px !important;
+        font-family: 'Suez One', serif;
+    }
+}
+
+//Nav buttons
+.nav-btn {
+    border: none;
+    font-family: 'Suez One', serif;
+    font-weight: lighter;
+    background-color: white;
+}
+
+
+
+.nav-item {
+    font-size: 18px;
+}
